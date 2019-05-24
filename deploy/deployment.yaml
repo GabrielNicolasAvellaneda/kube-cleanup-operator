@@ -4,7 +4,7 @@ metadata:
   labels:
     run: cleanup-operator
   name: cleanup-operator
-  namespace: default
+  namespace: prod
 spec:
   replicas: 1
   selector:
@@ -23,7 +23,7 @@ spec:
       serviceAccountName: cleanup-operator
       containers:
       - args:
-        - --namespace=default
+        - --namespace=prod
         image: quay.io/lwolf/kube-cleanup-operator
         imagePullPolicy: Always
         name: cleanup-operator
